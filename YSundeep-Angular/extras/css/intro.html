@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		selector{property:value;}
+		/*p{color: red;}*/
+		/*div{color: red;}*/
+		/*body{color: red;}*/
+		/*html{color: red;}*/
+
+		/*.p1{color: red;}*/
+		/*.d1{color: red;}*/ 
+		/*.b{color: red}*/
+		/*#p1{color: red;}
+		#p2{color: blue;}*/
+		/*#d1{color: red;}
+		#d2{color: red;}
+		#d3{color: red;}
+		#d4{color: red;}*/
+		/*#d1 , #d2, #d3,#d4{color: red}*/
+
+		/*#b{color: red;}*/
+		/*.d1 .p1{color: red;}*/
+		/*#d1 .p1{color:red; }*/
+		/*.b .d1{color: red;}*/
+		/*#b .d1{color: red;}*/
+		/*#b .p1{color: red;}*/
+		/*div p {color: red;}*/
+		/*.p2{color: red;}*/
+		
+
+		/*.p1#p2{color: red}*/
+		/*.p1.p2#p2{color: red;}*/
+		/*p#p2.p2.p1{color: red;}*/
+
+		body.b#b div#d1.d1 p#p1.p1, body.b#b div#d1.d1 p#p2.p2.p1{color: red;}
+	</style>
+</head>
+<body class="b" id="b">
+
+<div class="d1" id="d1">
+	<p class="p1" id="p1"> para 11 </p> <!-- class name and the id name can be same -->
+	<p class="p1 p2" id="p2"> para 12 </p>
+	<p class="p1"> para 13 </p>
+	<p class="p1"> para 14 </p>
+	<p class="p1"> para 15 </p>
+</div>
+
+##############################
+<div class="d1" id="d2">
+	<p class="p1"> para 21 </p>
+	<p class="p1"> para 22 </p>
+	<p class="p1"> para 23 </p>
+	<p class="p1"> para 24 </p>
+	<p class="p1"> para 25 </p>
+</div>
+##############################
+<div class="d1" id="d3">
+	<p class="p1"> para 31 </p>
+	<p class="p1"> para 32 </p>
+	<p class="p1"> para 33 </p>
+	<p class="p1"> para 34 </p>
+	<p class="p1"> para 35 </p>
+</div>
+##############################
+<div class="d1" id="d4">
+	<p class="p1"> para 41 </p>
+	<p class="p1"> para 42 </p>
+	<p class="p1"> para 43 </p>
+	<p class="p1"> para 44 </p>
+	<p class="p1"> para 45 </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom DIrecives</title>
+	<script src="../js/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+
+			{{fname}}
+			<input type="text" name="fname" ng-model="fname">
+
+			<!-- **<div qshore></div> -->
+			++<qshore msgs="Hellosssssssssssss" faname="{{fname}}"></qshore>
+			
+			<!-- @@<div class="qshore"></div> -->
+
+			<!-- directive: qshore -->
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		
+		app.controller('myController', function($scope){
+			$scope.fname = "qshroe";
+
+		});
+
+		app.directive('qshore', function(){
+			return {
+				restrict:'AEC',
+				template:'<p>hello this is custom directive {{msgs}} -- {{faname}}</p>',
+				replace:true,
+				scope:{msgs:'@',faname:'@' }
+
+			};
+
+		});
+
+	</script>
+</body>
+</html>

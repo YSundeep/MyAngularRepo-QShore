@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Custom Directives 1
+	</title>
+		<script type="text/javascript" src="..\..\js\angular.min.js"></script>
+
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="myController">
+		<pre>
+			Name : <input type="text" name="name" ng-model="faname">
+<!--  			Name : <input type="text" name="name" ng-model="name">
+ -->			{{xyz}}
+			Age  : <input type="text" name="age" ng-model="age">
+
+			@@@@@@@@@@
+			<custommessage cName="{{faname}}" cAge="{{age}}"></custommessage>
+			<!-- <message msgs="Hellosssssssssssss" faname="{{fname}}"></message> -->
+			############
+
+		</pre>
+	</div>
+		<script>
+			var app = angular.module('myApp',[]);
+			app.controller('myController',function($scope){
+					$scope.faname = "";
+					$scope.age = "";
+					$scope.xyz = "angular";
+					console.log("sundeep");
+			});
+
+			app.directive('custommessage',function(){
+				return {
+					restrict : 'EA',
+					// templateUrl : './temp.html',
+					template : '<p>hello this is custom directive {{cName}} -- {{cAge}}</p>',
+					replace:true ,
+					scope : {cName:'@', cAge:'@'}
+				};
+			});
+
+
+				// var app = angular.module('myApp', []);
+						
+				// 		app.controller('myController', function($scope){
+				// 			$scope.fname = "qshroe";
+
+				// 		});
+
+				// 		app.directive('message', function(){
+				// 			return {
+				// 				restrict:'AEC',
+				// 				template:'<p>hello this is custom directive {{msgs}} -- {{faname}}</p>',
+				// 				replace:true,
+				// 				scope:{msgs:'@',faname:'@' }
+
+				// 			};
+
+				// 		});
+
+		</script>
+	
+
+</body>
+</html>

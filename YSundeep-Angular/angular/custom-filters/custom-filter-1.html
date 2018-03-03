@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Custom Filter
+	</title>
+	<script type="text/javascript" src="..\..\js\angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller = "myController">
+		<input type="text" name="giveInput" ng-model="giveInput" placeholder="Enter String here">
+		{{giveInput | appendString}}
+		<!-- {{giveOutput}} -->
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+
+		app.controller('myController',function($scope){
+			$scope.giveInput = "sundeep";
+			
+		});
+		app.filter('appendString',function(){
+			return function(a){
+				var x ;
+				for (var i = 0; i < a.length; i++) {
+					if(a.charAt(i) == 'a')
+					{
+						x = x+"@";
+					}
+					else if(a.charAt(i) == 's')
+					{
+						x = x+"$";
+					}
+					else if(a.charAt(i) == 'e')
+					{
+						x = x+"L";
+					}
+					else if(a.charAt(i) == 'c')
+					{
+						x = x+"(";
+					}
+					else if(a.charAt(i) == 'm')
+					{
+						x = x+"(\\\/)";
+					}
+					else if(a.charAt(i) == 'd')
+					{
+						x = x+"|)";
+					}
+					else
+					{
+						x = x + a.charAt(i);
+					}
+				}
+				return x;
+			}
+
+		});
+	</script>
+</body>
+</html>

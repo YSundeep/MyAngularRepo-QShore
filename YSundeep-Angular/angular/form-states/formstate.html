@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Form States
+	</title>
+	<script type="text/javascript" src="..\..\js\angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<form name="f" novalidate ng-submit="f.$submitted && submitForm(f)">
+			<input type="text" name="myName" ng-model="myName" ng-required="f.myName.$error.invalid">
+			<pre>
+			valid :: {{f.myName.$valid}}
+			invalid :: {{f.myName.$invalid}}
+			dirty :: {{f.myName.$dirty}}
+			pristine :: {{f.myName.$pristine}}
+			touched :: {{f.myName.$touched}}
+			untouched :: {{f.myName.$untouched}}
+			required :: {{f.myName.$error.required}}
+			minlength :: {{f.myName.$error.minlength}}
+			</pre>
+			<span ng-if="f.$submitted && f.myName.$invalid">Enter the value before submittting</span>
+			<input type="submit" name="submit">
+			
+		</form>
+	</div>
+	<script type="text/javascript">
+		
+		var app = angular.module('myApp',[]);
+		app.controller('myController', function($scope){
+			$scope.submitForm = function(form)
+			{
+				form.$error.validationError = true;
+				console.log('show error');
+			}
+
+
+		});
+
+	</script>
+</body>
+</html>
